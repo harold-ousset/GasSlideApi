@@ -49,14 +49,14 @@ SlideObject
 
 PageObject  
 
-  | Name | Return type | Brief description |
-  |-------------------------------------|-------------|-----------------------------------------------------------------------------------------------|
-  | getPageId() | String | page id for ulterior identification |
-  | getName() | String | title of the slide |
-  | getSlideId() | String | id of the presentation |
-  | getElements() | Object | {tables:[tableObjects], images:[imageObject], shapes:[shapeObject], elemsCount:elems.length}; |
-  | createTable(rows, columns, options) | TableObject | options {tableId, height, width, left, top} |
-  | getTableById() | TableObject | . |
+| Name | Return type | Brief description |
+|-------------------------------------|-------------|-----------------------------------------------------------------------------------------------|
+| getPageId() | String | page id for ulterior identification |
+| getName() | String | title of the slide |
+| getSlideId() | String | id of the presentation |
+| getElements() | Object | {tables:[tableObjects], images:[imageObject], shapes:[shapeObject], elemsCount:elems.length}; |
+| createTable(rows, columns, options) | TableObject | options {tableId, height, width, left, top} |
+| getTableById() | TableObject | . |
 
 TableObject  
 
