@@ -3,19 +3,21 @@
 ## A library to manipulate Google Slide with Apps Script  
 ---
 ## Note  
-Slide API GAS is still alpha, that mean that for now there is only a few methods to manipulate tables or to build request like in the advanced services of google apps script.  
+Slides API GAS is still alpha, that means that for now there are only a few methods to manipulate tables or to build requests like in the advanced services of google apps script.  
+
 Next steps are:  
  - images manipulation
  - text manipulation
  - ...
-### install  
-The installation process is done through 2 steps: adding the library and authorizing the scope for the library to be used.  
-- install the library by adding it form the menu:  
+### Installation  
+The installation process is done through 2 steps: 
+- Adding the library and authorizing the scope for the library to be used.  
+- Installing the library by adding it fromm the menu:  
 Resources > Libraries...  
-then add in the field 'Find a Library' the id:  
+then in the field 'Find a Library'  add the id :  
  **1XDkYy_U9mTwBQ964uLojuGoOqmSc0iicTuY5zFU3-dg_4sFq_2N8GrYH**  
 
-- Authorize the scopes by going in the menu:  
+- Authorize the scopes by navigating in the menu:  
 Resources > Advanced Google Services...  
 Switch Drive API "on" and then click the link *Google Developers Console*.
 In the Google Developers Console enable the two following scopes:  
@@ -24,8 +26,9 @@ In the Google Developers Console enable the two following scopes:
 
 
 ### Usage  
-Once installed the library can be used by by calling SlideApi. Actually only two methods are supported *openById* and *createSlide* as well as the class *presentations* that is the equivalent of the advanced services of google apps script. They should be available with autocompletion.  
-Actually, Google Apps Script limitations do not allow autocompletion on sub methods. the reference table will help you to build the sub methods.  
+Once installed the library can be used by calling SlideApi. Currently only two methods are supported *openById* and *createSlide* as well as the class *presentations* that is the equivalent of the advanced services of Google Apps Script. They should be available with autocompletion.  
+
+At the moment, Google Apps Script limitations do not allow autocompletion on sub-methods. The reference table will help you to build the sub-methods.  
 
 #### sub methods reference table  
  - **getPageById()**
@@ -33,7 +36,8 @@ Actually, Google Apps Script limitations do not allow autocompletion on sub meth
 
 
 ### Example  
-this code will create a new presnetation and add it some tables with style.
+this code will create a new presentation and add some tables with style.
+
 ```javascript
 function launchSample() {
   // create a slide with name 'slide name'
