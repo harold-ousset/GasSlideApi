@@ -10,7 +10,7 @@ Next steps are:
  - text manipulation
  - ...
 ### Installation  
-The installation process is done through 2 steps: 
+The installation process is done through 2 steps:
 - Adding the library and authorizing the scope for the library to be used.  
 - Installing the library by adding it fromm the menu:  
 Resources > Libraries...  
@@ -31,8 +31,78 @@ Once installed the library can be used by calling SlideApi. Currently only two m
 At the moment, Google Apps Script limitations do not allow autocompletion on sub-methods. The reference table will help you to build the sub-methods.  
 
 #### sub methods reference table  
- - **getPageById()**
+- **methods**  
 
+| Method | Return type |
+|--------------------------|-------------|
+| openById(presentationId) | slideObject |
+| createSlide(name) | SlideObject |
+
+ * **sub-methods**  
+
+SlideObject  
+
+| Name | Return type | Brief description |
+|---------------------|---------------------|---------------------------------------------|
+| getPageById(pageId) | PageObject | a page object for chaining (pageId: String) |
+| getPages() | Array of PageObject |  . |
+
+PageObject  
+
+  | Name | Return type | Brief description |
+  |-------------------------------------|-------------|-----------------------------------------------------------------------------------------------|
+  | getPageId() | String | page id for ulterior identification |
+  | getName() | String | title of the slide |
+  | getSlideId() | String | id of the presentation |
+  | getElements() | Object | {tables:[tableObjects], images:[imageObject], shapes:[shapeObject], elemsCount:elems.length}; |
+  | createTable(rows, columns, options) | TableObject | options {tableId, height, width, left, top} |
+  | getTableById() | TableObject | . |
+
+TableObject  
+
+| Name | Return type | Brief description |
+|---------------------------------------------|-------------|-------------------------------------------------------|
+| getId() | String | id of the element |
+| getType() | String | return 'table' |
+| getPageId() | String | id of the page where the element belong |
+| getSlideId() | String | id of the presentation |
+| move(x, y, mode) | tableObject | for chaining |
+| getRows() | number | number of rows in the table |
+| getColumns() | number | number of columns in the table |
+| getValues() | 2DArray | a 2D Array like the one you can get in SpreadsheetApp |
+| getRange_(row, column, numRows, numColumns) | RangeObject | Range object for chaining |
+
+RangeObject  
+
+| Name | Return type | Brief description |
+|---------------------------|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| getId() | String | id of the element |
+| getPageId() | String | id of the page where the element belong |
+| getSlideId() | String | id of the presentation |
+| getValues() | 2DArray | a 2D Array like the one you can get in SpreadsheetApp |
+| setValues(2DArray) | RangeObject | Range object for chaining |
+| setBackgroundColor(r,g,b) | RangeObject | r: red color scale from 0 to 1 or 0 to 256 alternatively a #Color string <br>g: green scale from 0 to 1 or 0 to 256 <br>b: blue scale from 0 to 1 or 0 to 256 <br>/!\ to use the scale 0 to 256 at least one of the component must be higher than 1 |
+
+ - **classes**  
+
+| Name | Brief description |
+|---------------|----------------------------------------------------------------|
+| presentations | use the slideApi like the advanced Google Apps Script services |
+
+##### presentations methods  
+
+| Method | Return type | Brief description |
+|------------------------------------------------|----------------|--------------------------------------------------------|
+| get(presentationId) | responseObject |  |
+| batchUpdate(presentationId,  fields,  request) | responseObject | presentationId: String fields: String, request: Object |
+| create(fields,  request) | responseObject | fields: String, request: Object |
+| pages | pageObject | . |
+
+* **presentation.pages**  
+
+| Method | Return type | Brief description |
+|-------------------------------------------|----------------|-------------------|
+| get(presentationId, pageObjectId, fields) | responseObject | . |
 
 
 ### Example  
