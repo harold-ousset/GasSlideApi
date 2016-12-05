@@ -1,6 +1,6 @@
 # GAS Slide API  
 
-## A library to manipulate Google Slide with Apps Script  
+## A library to manipulate Google Presentation Slides with Google Apps Script  
 ---
 ## Note  
 Slides API GAS is still alpha, that means that for now there are only a few methods to manipulate tables or to build requests like in the advanced services of google apps script.  
