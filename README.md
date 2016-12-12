@@ -55,8 +55,16 @@ PageObject
 | getName() | String | title of the slide |
 | getSlideId() | String | id of the presentation |
 | getElements() | Object | {tables:[tableObjects], images:[imageObject], shapes:[shapeObject], elemsCount:elems.length}; |
-| createTable(rows, columns, options) | TableObject | options {tableId, height, width, left, top} |
+| createTable(rows, columns, options) | TableObject | options {id, height, width, left, top} |
 | getTableById() | TableObject | . |
+|createImage(url, width, height, options) | ImageObject | options {id, top, left}|
+|createTetBox(width, height, options)| TextBoxObject|options {top, left}|
+
+TextBoxObject  
+
+|Name|Return type|Brief description|
+|-------------------------------------|-------------|-----------------------------------------------------------------------------------------------|
+|setText()|TextBoxObject|TextBox for chaining|
 
 TableObject  
 
