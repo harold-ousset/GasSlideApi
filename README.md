@@ -8,21 +8,30 @@ Slides API GAS is still alpha, that means that for now there are only a few meth
 Next steps are:  
  - images manipulation
  - text manipulation
- - ...
+ - more control on the tables (style, text modifications...)
+ - ...  
+
+If you have any request, please do not hesitate to post it [here](https://docs.google.com/a/ousset.net/forms/d/e/1FAIpQLSclmB-SBMzXwyI5essEgaNhTi0fDaqcuryGL0evauJXZRiqfA/viewform)
+
 ### Installation  
 The installation process is done through 2 steps:
-- Adding the library and authorizing the scope for the library to be used.  
-- Installing the library by adding it fromm the menu:  
+Adding the library and authorizing the scope for the library to be used.  
+- Adding the library: in your Google Apps Script do it from the menu:  
 Resources > Libraries...  
-then in the field 'Find a Library'  add the id :  
+<img src="http://i.imgur.com/isbBD4j.png" alt="ressources>libraries" style="width:200px;">  
+Then in the field 'Find a Library'  add the id :  
  **1XDkYy_U9mTwBQ964uLojuGoOqmSc0iicTuY5zFU3-dg_4sFq_2N8GrYH**  
+ ![Library installation](http://i.imgur.com/xony0kx.png)  
 
 - Authorize the scopes by navigating in the menu:  
 Resources > Advanced Google Services...  
-Switch Drive API "on" and then click the link *Google Developers Console*.
+<img alt="resources > advanced Google services..." src="http://i.imgur.com/vmQTBz0.png" style="width:200px">  
+Switch Drive API "on" and then click the link *Google Developers Console*.  
+![google dev console](http://i.imgur.com/vcFOPi3.png)  
 In the Google Developers Console enable the two following scopes:  
  - Google Drive API  
  - Google Slides API  
+ ![slide and drive api](http://i.imgur.com/Vqci1H4.png)
 
 
 ### Usage  
@@ -60,11 +69,18 @@ PageObject
 |createImage(url, width, height, options) | ImageObject | options {id, top, left}|
 |createTetBox(width, height, options)| TextBoxObject|options {top, left}|
 
+ImageObject  
+
+|Name|Return type|Brief description|
+|-------------------------------------|-------------|-----------------------------------------------------------------------------------------------|
+| move(x, y, mode) | ImageObject | for chaining |
+
 TextBoxObject  
 
 |Name|Return type|Brief description|
 |-------------------------------------|-------------|-----------------------------------------------------------------------------------------------|
 |setText()|TextBoxObject|TextBox for chaining|
+| move(x, y, mode) | TextObject | for chaining |
 
 TableObject  
 
@@ -74,7 +90,7 @@ TableObject
 | getType() | String | return 'table' |
 | getPageId() | String | id of the page where the element belong |
 | getSlideId() | String | id of the presentation |
-| move(x, y, mode) | tableObject | for chaining |
+| move(x, y, mode) | TableObject | for chaining |
 | getRows() | number | number of rows in the table |
 | getColumns() | number | number of columns in the table |
 | getValues() | 2DArray | a 2D Array like the one you can get in SpreadsheetApp |
