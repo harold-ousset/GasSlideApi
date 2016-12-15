@@ -25,7 +25,7 @@ Then in the field 'Find a Library'  add the id :
 
 - Authorize the scopes by navigating in the menu:  
 Resources > Advanced Google Services...  
-<img alt="resources > advanced Google services..." src="http://i.imgur.com/vmQTBz0.png" style="width:200px">  
+<img src="http://i.imgur.com/vmQTBz0.png"  alt="resources advanced Google services"  style="width:200px">   
 Switch Drive API "on" and then click the link *Google Developers Console*.  
 ![google dev console](http://i.imgur.com/vcFOPi3.png)  
 In the Google Developers Console enable the two following scopes:  
